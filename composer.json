@@ -1,13 +1,7 @@
 {
     "name": "waka/wn-salesforce-plugin",
     "description": "Plugin pour salesforce",
-    "type": "october-plugin",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/charlesStOlive/forrest.git"
-        }
-    ],
+    "type": "winter-plugin",
     "require": {
         "omniphx/forrest": "dev-master_9"
     },
