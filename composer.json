@@ -1,5 +1,5 @@
 {
-    "name": "waka/oc-salesforce-plugin",
+    "name": "waka/wn-salesforce-plugin",
     "description": "Plugin pour salesforce",
     "type": "october-plugin",
     "repositories": [
