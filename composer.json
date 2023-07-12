@@ -1,7 +1,16 @@
 {
     "name": "waka/wn-salesforce-plugin",
-    "description": "Plugin pour salesforce",
+    "description": "Plugin pour salesforce bas& sur forrest",
     "type": "winter-plugin",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/charlesStOlive/forrest.git"
+        }
+    ],
+    "require": {
+        "omniphx/forrest": "dev-master_9"
+    },
     "license": "MIT",
     "authors": [
         {
