@@ -1,7 +1,7 @@
 {
-    "name": "waka/wn-salesforce-plugin",
+    "name": "waka/oc-salesforce-plugin",
     "description": "Plugin pour salesforce",
-    "type": "winter-plugin",
+    "type": "october-plugin",
     "repositories": [
         {
             "type": "vcs",
@@ -10,16 +10,6 @@
     ],
     "require": {
         "omniphx/forrest": "dev-master_9"
-    },
-    "scripts": {
-        "post-create-project-cmd": [
-            "php artisan key:generate",
-            "php artisan package:discover"
-        ],
-        "post-update-cmd": [
-            "php artisan winter:util set build",
-            "php artisan package:discover"
-        ]
     },
     "license": "MIT",
     "authors": [
