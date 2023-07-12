@@ -1,0 +1,16 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+
+
+
+logsfErrors:
+    label: waka.salesforce::lang.logsf.errors
+    manage:
+        form: $/waka/salesforce/models/logsferror/fields.yaml
+    view:
+        showSearch: true
+        list: $/waka/salesforce/models/logsferror/columns.yaml
+        recordsPerPage: 50
+        toolbarButtons: delete
