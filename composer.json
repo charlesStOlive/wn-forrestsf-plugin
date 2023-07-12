@@ -2,6 +2,25 @@
     "name": "waka/wn-salesforce-plugin",
     "description": "Plugin pour salesforce",
     "type": "winter-plugin",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/charlesStOlive/forrest.git"
+        }
+    ],
+    "require": {
+        "omniphx/forrest": "dev-master_9"
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "php artisan key:generate",
+            "php artisan package:discover"
+        ],
+        "post-update-cmd": [
+            "php artisan winter:util set build",
+            "php artisan package:discover"
+        ]
+    },
     "license": "MIT",
     "authors": [
         {
