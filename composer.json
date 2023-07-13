@@ -3,7 +3,7 @@
     "description": "Plugin pour salesforce",
     "type": "winter-plugin",
     "require": {
-        "omniphx/forrest": "dev-master_9"
+        "omniphx/forrest": "^2.16.1"
     },
     "license": "MIT",
     "authors": [
