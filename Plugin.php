@@ -48,6 +48,8 @@ class Plugin extends PluginBase
      */
     public function register()
     {
+            App::bind(\Omniphx\Forrest\Providers\Laravel\LaravelSession::class, \Waka\SalesForce\Classes\Replacements\LaravelSession::class);
+            // Ajoutez autant de liens de substitution que nécessaire
     }
 
     public function registerSchedule($schedule)

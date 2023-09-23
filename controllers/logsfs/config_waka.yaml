@@ -1,0 +1,38 @@
+# ===================================
+#  WakaController | Workflow | Productor |  Behavior Config
+# ===================================
+
+
+modelClass: Waka\SalesForce\Models\LogSf
+backendUrl: waka/salesforce/logsfs
+
+workflow: false 
+
+
+controllerConfig:
+    breadcrump:
+        inSettings: true 
+        title: waka.salesforce::lang.models.logsf.label
+        rows: 
+            index: 
+                label: waka.salesforce::lang.controllers.logsfs.label
+                url: waka/salesforce/logsfs 
+    index:
+        base:
+            create: 
+                show: true
+                permissions: [waka.salesforce.*]
+            reorder: 
+                show: false  
+                permissions: []
+            delete: 
+                show: true
+                permissions: [waka.salesforce.*]
+        partials:
+            index_btn:
+                url: $/waka/salesforce/controllers/logsfs/_index_btn.php
+    update:
+        # partials:
+        #     update_btn:
+        #         url: $/waka/salesforce/controllers/logsfs/_update_btn.php
+

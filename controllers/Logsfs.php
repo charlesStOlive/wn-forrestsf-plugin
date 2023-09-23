@@ -2,52 +2,31 @@
 
 use BackendMenu;
 use Backend\Classes\Controller;
-use System\Classes\SettingsManager;
-use Waka\SalesForce\Classes\SalesForceImport;
-use Waka\SalesForce\Models\Settings;
-
+use System\Classes\SettingsManager; 
 /**
- * Logsf Back-end Controller
+ * Log Sfs Backend Controller
  */
-class Logsfs extends Controller
+class LogSfs extends Controller
 {
+    /**
+     * @var array Behaviors that are implemented by this controller.
+     */
     public $implement = [
-        'Backend.Behaviors.FormController',
-        'Backend.Behaviors.ListController',
-        'Backend.Behaviors.RelationController'
-
+        \Backend\Behaviors\FormController::class,
+        \Backend\Behaviors\ListController::class,
+        \Backend\Behaviors\RelationController::class,
+        \Waka\Wutils\Behaviors\WakaControllerBehavior::class,
     ];
-
-    public $formConfig = 'config_form.yaml';
-    public $listConfig = 'config_list.yaml';
-    public $relationConfig = 'config_relation.yaml';
 
     public $sfpopupWidget;
 
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('October.System', 'system', 'settings');
-        SettingsManager::setContext('Waka.SalesForce', 'logsfs');
+        BackendMenu::setContext('Winter.System', 'system', 'settings');
+        SettingsManager::setContext('Waka.SalesForce', 'logSfs');
         $this->sfpopupWidget = $this->createSfPopupWidget();
     }
-
-    // public function isSfAuthorized()
-    // {
-    //     //trace_log("Est ce qu'il est auth");
-    //     try {
-    //         $forrest = \Forrest::identity();
-    //         if ($forrest) {
-    //             //trace_log($forrest);
-    //             return true;
-    //         } else {
-    //             return false;
-    //         }
-    //     } catch (\Exception $e) {
-    //         return false;
-    //     }
-
-    // }
 
     public function isSfOauthAuthenticate()
     {
@@ -133,14 +112,6 @@ class Logsfs extends Controller
         }
     }
 
-    public function onCallExportValidation()
-    {
-    }
-
-    public function onExportValidation()
-    {
-    }
-
     public function createSfPopupWidget()
     {
         $config = $this->makeConfig('$/waka/salesforce/controllers/logsfs/config_popup.yaml');
@@ -152,114 +123,6 @@ class Logsfs extends Controller
         return $widget;
     }
 
-    public function getFalseResult()
-    {
-        $array1 = "Array
-        (
-            [attributes] => Array
-                (
-                    [type] => Filleul__c
-                    [url] => /services/data/v50.0/sobjects/Filleul__c/a0G0W00001gqYsQUAU
-                )
-
-            [Id] => a0G0W00001gqYsQUAU
-            [Name] => F-107731 RAHLAN H'Ka
-            [Parrain__c] => 001d000000JDnnNAAT
-            [Pays__c] => Vietnam
-            [Programme__r] => Array
-                (
-                    [attributes] => Array
-                        (
-                            [type] => Programme__c
-                            [url] => /services/data/v50.0/sobjects/Programme__c/a0Qd00000027OXnEAM
-                        )
-
-                    [Comit_de_traduction__r] => Array
-                        (
-                            [attributes] => Array
-                                (
-                                    [type] => Comitetrad__c
-                                    [url] => /services/data/v50.0/sobjects/Comitetrad__c/a0td00000012HqCAAU
-                                )
-
-                            [Id] => a0td00000012HqCAAU
-                        )
-
-                )
-
-        )";
-        $array2 = "Array
-        (
-            [attributes] => Array
-                (
-                    [type] => Filleul__c
-                    [url] => /services/data/v50.0/sobjects/Filleul__c/a0G0W00001pUr1ZUAS
-                )
-
-            [Id] => a0G0W00001pUr1ZUAS
-            [Name] => F-112334 RMAH H’ NHIÊN
-            [Parrain__c] => 001d000000JDiWlAAL
-            [Pays__c] => Vietnam
-            [Programme__r] => Array
-                (
-                    [attributes] => Array
-                        (
-                            [type] => Programme__c
-                            [url] => /services/data/v50.0/sobjects/Programme__c/a0Qd00000027OXnEAM
-                        )
-
-                    [Comit_de_traduction__r] => Array
-                        (
-                            [attributes] => Array
-                                (
-                                    [type] => Comitetrad__c
-                                    [url] => /services/data/v50.0/sobjects/Comitetrad__c/a0td00000012HqCAAU
-                                )
-
-                            [Id] => a0td00000012HqCAAU
-                        )
-
-                )
-
-        )";
-        $array3 = "Array
-        (
-            [attributes] => Array
-                (
-                    [type] => Filleul__c
-                    [url] => /services/data/v50.0/sobjects/Filleul__c/a0G0W00001pUr36UAC
-                )
-
-            [Id] => a0G0W00001pUr36UAC
-            [Name] => F-112335 KPĂ H’ MAI
-            [Parrain__c] => 001d0000029YPauAAG
-            [Pays__c] => Vietnam
-            [Programme__r] => Array
-                (
-                    [attributes] => Array
-                        (
-                            [type] => Programme__c
-                            [url] => /services/data/v50.0/sobjects/Programme__c/a0Qd00000027OXnEAM
-                        )
-
-                    [Comit_de_traduction__r] => Array
-                        (
-                            [attributes] => Array
-                                (
-                                    [type] => Comitetrad__c
-                                    [url] => /services/data/v50.0/sobjects/Comitetrad__c/a0td00000012HqCAAU
-                                )
-
-                            [Id] => a0td00000012HqCAAU
-                        )
-
-                )
-
-        )";
-        $results = [];
-        $results[0] = \Waka\Utils\Classes\ReverseLogArray::print_r_reverse(trim($array1));
-        $results[1] = \Waka\Utils\Classes\ReverseLogArray::print_r_reverse(trim($array2));
-        $results[2] = \Waka\Utils\Classes\ReverseLogArray::print_r_reverse(trim($array3));
-        return $results;
-    }
+    
+    
 }

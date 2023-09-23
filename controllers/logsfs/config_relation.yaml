@@ -2,10 +2,7 @@
 #  Relation Behavior Config
 # ===================================
 
-
-
-
-logsfErrors:
+logsf_errors:
     label: waka.salesforce::lang.logsf.errors
     manage:
         form: $/waka/salesforce/models/logsferror/fields.yaml

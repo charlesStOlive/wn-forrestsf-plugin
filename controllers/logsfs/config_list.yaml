@@ -6,19 +6,22 @@
 list: $/waka/salesforce/models/logsf/columns.yaml
 
 # Model Class name
-modelClass: Waka\SalesForce\Models\Logsf
+modelClass: Waka\SalesForce\Models\LogSf
 
 # List Title
-title: Manage Logsfs
+title: waka.salesforce::lang.controllers.logsfs.label
 
 # Link URL for each record
-recordUrl: waka/salesforce/logsfs/preview/:id
+recordUrl: waka/salesforce/logsfs/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records
 
 # Records to display per page
 recordsPerPage: 20
+
+# Options to provide the user when selecting how many records to display per page
+perPageOptions: [20, 40, 80, 100, 120]
 
 # Display page numbers with pagination, disable to improve performance
 showPageNumbers: true

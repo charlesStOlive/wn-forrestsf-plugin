@@ -3,29 +3,29 @@
 # ===================================
 
 # Record name
-name: waka.salesforce::lang.logsf.form_name
+name: waka.salesforce::lang.controllers.logsfs.label
 
 # Model Form Field configuration
 form: $/waka/salesforce/models/logsf/fields.yaml
 
 # Model Class name
-modelClass: Waka\SalesForce\Models\Logsf
+modelClass: Waka\SalesForce\Models\LogSf
 
 # Default redirect location
 defaultRedirect: waka/salesforce/logsfs
 
 # Create page
 create:
-    title: Create Logsf
+    title: backend::lang.form.create_title
     redirect: waka/salesforce/logsfs/update/:id
     redirectClose: waka/salesforce/logsfs
 
 # Update page
 update:
-    title: Edit Logsf
+    title: backend::lang.form.update_title
     redirect: waka/salesforce/logsfs
     redirectClose: waka/salesforce/logsfs
 
 # Preview page
 preview:
-    title: waka.salesforce::lang.logsf.preview_name
+    title: backend::lang.form.preview_title

@@ -10,10 +10,10 @@ return [
         'error' => 'Erreur',
         'error_comment' => 'Commentaire erreur',
         'unauthorized' => 'SalesForce n\'est pas connecté ! ',
-        'unauthorized_comment' => 'Vous devez connecter SalesForce'
+        'unauthorized_comment' => 'Vous devez connecter SalesForce',
     ],
     'job' => [
-        'title' => 'Requête SalesForce'
+        'title' => 'Requête SalesForce',
     ],
     'logsf' => [
         'errors' => 'Erreurs',
@@ -27,19 +27,29 @@ return [
         'popup_titile' => 'Rapport',
         'preview_name' => 'Voir le log',
         'query' => 'Requête',
-        'sf_total_size' => 'Lignes venant de SalesForce'
+        'sf_total_size' => 'Lignes venant de SalesForce',
     ],
     'menu' => [
         'category' => 'Syncronisation',
         'logsf' => 'Log SalesForce ',
         'logsf_description' => 'Connexion et lancement de syncro manuel',
         'settings' => 'Options de SalesForce',
-        'settings_description' => 'Option et configuration des imports et exports'
+        'settings_description' => 'Option et configuration des imports et exports',
     ],
     'settings' => [
         'active_imports' => 'Choisissez les imports actifs',
         'exports_authorized' => 'Exports autorisés',
         'imports_authorized' => 'Imports autorisés',
-        'oldest_date' => 'Date de réinitialisation'
-    ]
+        'oldest_date' => 'Date de réinitialisation',
+    ],
+    'models' => [
+        'logsf' => [
+            'label' => 'Log Sf',
+        ],
+    ],
+    'controllers' => [
+        'logsfs' => [
+            'label' => 'Log Sfs',
+        ],
+    ],
 ];

@@ -1,5 +1,5 @@
 <div class="p-a">
-    <?php if(!$this->isSfAuthorized()) : ?>
+    <?php if(!$this->isSfOauthAuthenticate()) : ?>
     <div class="callout fade in callout-danger">
         <div class="header">
             <i class="icon-warning"></i>
@@ -7,7 +7,7 @@
             <p><?=e(trans('waka.salesforce::lang.global.unauthorized_comment'));?></p>
         </div>
         <div class="content">
-            <p><a href="<?php Config::get('app.url')?>/api/authenticate"
+            <p><a href="<?php Config::get('app.url')?>/api/sf/0u/authenticate"
                     class="btn btn-primary"><?=e(trans('waka.salesforce::lang.global.authorize_button'));?></a></p>
         </div>
     </div>

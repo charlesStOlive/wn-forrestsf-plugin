@@ -68,7 +68,7 @@ class Logsf extends Model
      */
     public $hasOne = [];
     public $hasMany = [
-        'logsfErrors' => ['Waka\SalesForce\Models\LogsfError', 'delete' => 'true'],
+        'logsf_errors' => ['Waka\SalesForce\Models\LogsfError', 'delete' => 'true'],
     ];
     public $hasOneThrough = [];
     public $hasManyThrough = [];
