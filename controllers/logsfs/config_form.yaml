@@ -23,7 +23,7 @@ create:
 # Update page
 update:
     title: backend::lang.form.update_title
-    redirect: waka/salesforce/logsfs
+    redirect: waka/salesforce/logsfs/update/:id
     redirectClose: waka/salesforce/logsfs
 
 # Preview page
