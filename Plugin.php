@@ -24,7 +24,7 @@ class Plugin extends PluginBase
      */
     public $require = [
         'Waka.Wutils',
-        'Wcli.Wconfig',
+        // 'Wcli.Wconfig',
     ];
     /**
      * Returns information about this plugin.
