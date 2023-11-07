@@ -1,8 +1,8 @@
 files:
     salesforce_install:
         title: Installation SalesForce
-        group: "10 Installation"
+        category_slug: "modules"
         comment: "Comment configurer SalesForce"
-        permissions: waka.docser.technics
+        permissions: waka.docser.modules
         relativePath: waka/salesforce/docs
-        order: 20
+        sort_order: 1000
