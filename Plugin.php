@@ -127,66 +127,6 @@ class Plugin extends PluginBase
     public function boot()
     {
         $this->bootPackages();
-
-        $sfCronTime = Settings::get('sf_cron_time');
-        //trace_log(Carbon::parse(Settings::get('sf_cron_time'))->format('H:i'));
-
-        //trace_log(Config::get('forrest.authentication'));
-
-        // Event::listen('backend.form.extendFields', function ($widget) {
-
-        //     //trace_log('yo');
-        //     if (!$widget->getController() instanceof \System\Controllers\Settings) {
-        //         return;
-        //     }
-
-        //     // Only for the User model
-        //     if (!$widget->model instanceof Settings) {
-        //         return;
-        //     }
-
-        //     if ($widget->isNested === true) {
-        //         return;
-        //     }
-
-        //     $widget->addTabFields([
-        //         'sf_responsable' => [
-        //             'tab' => 'Sales Force',
-        //             'label' => "Collaborateurs recevant l'email de bilan Sales Force",
-        //             'type' => 'taglist',
-        //             'mode' => 'array',
-        //             'useKey' => 'true',
-        //             'options' => 'listUsers',
-        //         ],
-        //         'sf_active_imports' => [
-        //             'tab' => 'Sales Force',
-        //             'label' => 'waka.salesforce::lang.settings.active_imports',
-        //             'type' => 'checkboxlist',
-        //             'quickselect' => true,
-        //             'options' => 'listImports',
-        //         ],
-
-        //         'sf_oldest_date' => [
-        //             'tab' => 'Sales Force',
-        //             'label' => 'waka.salesforce::lang.settings.oldest_date',
-        //             'type' => 'datepicker',
-        //         ],
-        //         'sf_cron_time' => [
-        //             'tab' => 'Sales Force',
-        //             'label' => "Heure d'execution du CRON",
-        //             'type' => 'datepicker',
-        //             'mode' => 'time',
-        //             'span' => 'left',
-        //             'width' => '100px',
-        //         ],
-        //     ]);
-        // });
-        // Settings::extend(function ($setting) {
-        //     $setting->addDynamicMethod('listImports', function () {
-        //         $sf = new \Waka\SalesForce\Classes\SalesForceConfig();
-        //         return $sf->lists('import');
-        //     });
-        // });
     }
 
     public function bootPackages()
@@ -222,20 +162,6 @@ class Plugin extends PluginBase
     }
 
     /**
-     * Registers any front-end components implemented in this plugin.
-     *
-     * @return array
-     */
-    public function registerComponents()
-    {
-        return []; // Remove this line to activate
-
-        return [
-            'Waka\SalesForce\Components\MyComponent' => 'myComponent',
-        ];
-    }
-
-    /**
      * Registers any back-end permissions used by this plugin.
      *
      * @return array
@@ -243,30 +169,17 @@ class Plugin extends PluginBase
     public function registerPermissions()
     {
         return [
-            'waka.salesforce.admin.super' => [
-                'tab' => 'Waka - Sales Force',
-                'label' => 'Super administrateur de Sales Force',
-            ],
             'waka.salesforce.admin.base' => [
                 'tab' => 'Waka - Sales Force',
                 'label' => 'Administrateur de Sales Force',
             ],
-            'waka.salesforce.user' => [
+            'waka.salesforce.admin.super' => [
                 'tab' => 'Waka - Sales Force',
-                'label' => 'Utilisateur de Sales Force',
+                'label' => 'Super administrateur de Sales Force',
             ],
         ];
     }
 
-    /**
-     * Registers back-end navigation items for this plugin.
-     *
-     * @return array
-     */
-    public function registerNavigation()
-    {
-        return []; // Remove this line to activate
-    }
     public function registerSettings()
     {
 
@@ -278,7 +191,7 @@ class Plugin extends PluginBase
                 'icon' => 'icon-cog',
                 'class' => 'Waka\SalesForce\Models\Settings',
                 'order' => 101,
-                'permissions' => ['waka.salesforce.admin', 'waka.salesforce.admin'],
+                'permissions' => ['waka.salesforce.admin.*'],
             ],
             'logsfs' => [
                 'label' => Lang::get('waka.salesforce::lang.menu.logsf'),
@@ -287,7 +200,7 @@ class Plugin extends PluginBase
                 'icon' => 'icon-salesforce',
                 'url' => Backend::url('waka/salesforce/logsfs'),
                 'order' => 130,
-                'permissions' => ['waka.salesforce.admin'],
+                'permissions' => ['waka.salesforce.admin.*'],
             ],
         ];
     }

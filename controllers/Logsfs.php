@@ -18,6 +18,8 @@ class LogSfs extends Controller
         \Waka\Wutils\Behaviors\WakaControllerBehavior::class,
     ];
 
+    public $requiredPermissions = ['waka.salesforce.admin.*'];
+
     public $sfpopupWidget;
 
     public function __construct()
