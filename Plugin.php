@@ -55,7 +55,7 @@ class Plugin extends PluginBase
     public function registerSchedule($schedule)
     {
         $sfCronTime = Settings::get('sf_cron_time');
-        //trace_log($sfCronTime);
+        //trace_log('$sfCronTime : '.$sfCronTime);
 
         $schedule->call(function () {
             //trace_log('lancement cron sf');
@@ -99,6 +99,7 @@ class Plugin extends PluginBase
         })->dailyAt(Carbon::parse(Settings::get('sf_cron_time'))->format('H:i'));
 
         $schedule->call(function () {
+            //trace_log('Je lance le mail de bilans !');
             $sfCronTime = Settings::get('sf_cron_time');
             if (!$sfCronTime) {
                 \Log::error('sfCronTime est vide le cron SalesForce est annulé');
@@ -108,7 +109,7 @@ class Plugin extends PluginBase
             foreach ($usersIds as $userId) {
                 $user = \Backend\Models\User::find($userId);
                 if ($user) {
-                    $sfLogs = \Waka\SalesForce\Models\Logsf::with('logsfErrors')->where('updated_at', '>=', $fromDate = \Carbon\Carbon::today())->get();
+                    $sfLogs = \Waka\SalesForce\Models\LogSf::with('log_sf_errors')->where('updated_at', '>=', $fromDate = \Carbon\Carbon::today())->get();
                     $vars = compact('sfLogs', 'user');
                     \Mail::sendTo($user, 'waka.salesforce::mail.import_result', $vars);
                 } else {

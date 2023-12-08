@@ -2,3 +2,6 @@
   - 'First version of SalesForce'
   - create_logsfs_table.php
   - create_logsf_errors_table.php
+2.0.0:
+  - 'Modification des noms de classes de logsf à LogSf et modification column table'
+  - v2.0.0/update_logsf_errors_table.php

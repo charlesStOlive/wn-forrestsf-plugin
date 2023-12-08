@@ -16,7 +16,7 @@ fields:
         label: waka.salesforce::lang.logsf.query
         type: textarea
 
-    logsf_errors:
+    log_sf_errors:
         type: partial
         path: field_logsf_errors
 

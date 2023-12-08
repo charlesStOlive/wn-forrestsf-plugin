@@ -4,7 +4,7 @@ use Winter\Storm\Database\Schema\Blueprint;
 use Winter\Storm\Database\Updates\Migration;
 use Schema;
 
-class CreateLogsfsTable extends Migration
+class CreateLogSfsTable extends Migration
 {
     public function up()
     {

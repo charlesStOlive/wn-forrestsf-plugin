@@ -3,8 +3,8 @@
 namespace Waka\SalesForce\Classes;
 
 use Carbon\Carbon;
-use Waka\SalesForce\Models\Logsf;
-use Waka\SalesForce\Models\LogsfError;
+use Waka\SalesForce\Models\LogSf;
+use Waka\SalesForce\Models\LogSfError;
 use Waka\SalesForce\Models\Settings;
 
 class SalesForceImport
@@ -248,8 +248,8 @@ class SalesForceImport
                 //trace_log('row ok');
             } catch (\Exception $e) {
                 //trace_log($e->getMessage());
-                $logsfError = new LogsfError(['error' => $id . " : " . $e->getMessage()]);
-                $this->logsf->logsfErrors()->add($logsfError);
+                $logsfError = new LogSfError(['error' => $id . " : " . $e->getMessage()]);
+                $this->logsf->log_sf_errors()->add($logsfError);
             }
             //trace_log('fin du mapResults');
         }
@@ -321,7 +321,7 @@ class SalesForceImport
 
     private function getLastLogDate()
     {
-        $lastImport = Logsf::where('name', $this->getConfig('name'))->where('is_ended', true)->orderBy('created_at', 'desc')->first();
+        $lastImport = LogSf::where('name', $this->getConfig('name'))->where('is_ended', true)->orderBy('created_at', 'desc')->first();
         if ($lastImport) {
             //trace_log("last import");
             //trace_log($lastImport->created_at);
@@ -354,7 +354,7 @@ class SalesForceImport
         // if (!$this->doLog) {
         //     return null;
         // }
-        $logsf = Logsf::create([
+        $logsf = LogSf::create([
             'name' => $this->getConfig('name'),
             'start_at' => $this->getLastLogDate(),
             'query' => $query,

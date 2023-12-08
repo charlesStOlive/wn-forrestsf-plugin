@@ -134,7 +134,7 @@ class ImportSf implements WakajobQueueJob
                 $this->closejob($sfImporter);
             }
        } catch (\Exception $ex) {
-            /**/trace_log($ex->getMessage());
+            \Log::error($ex->getMessage());
             $this->jobManager->failJob($this->jobId, ['error' => $ex->getMessage()]);  
         }
     }

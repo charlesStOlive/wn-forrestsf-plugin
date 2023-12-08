@@ -6,7 +6,7 @@ use Model;
  * logsf Model
  */
 
-class Logsf extends Model
+class LogSf extends Model
 {
     use \Winter\Storm\Database\Traits\Validation;
     use \Winter\Storm\Database\Traits\SoftDelete;
@@ -68,7 +68,7 @@ class Logsf extends Model
      */
     public $hasOne = [];
     public $hasMany = [
-        'logsf_errors' => ['Waka\SalesForce\Models\LogsfError', 'delete' => 'true'],
+        'log_sf_errors' => ['Waka\SalesForce\Models\LogSfError', 'delete' => 'true'],
     ];
     public $hasOneThrough = [];
     public $hasManyThrough = [];

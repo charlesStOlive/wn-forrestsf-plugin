@@ -3,9 +3,9 @@
 use Model;
 
 /**
- * LogsfError Model
+ * LogSfError Model
  */
-class LogsfError extends Model
+class LogSfError extends Model
 {
     use \Winter\Storm\Database\Traits\Validation;
 
@@ -64,7 +64,7 @@ class LogsfError extends Model
     public $hasOneThrough = [];
     public $hasManyThrough = [];
     public $belongsTo = [
-        'logsf' => 'Waka\SalesForce\Models\Logsf',
+        'logsf' => 'Waka\SalesForce\Models\LogSf',
     ];
     public $belongsToMany = [];
     public $morphTo = [];

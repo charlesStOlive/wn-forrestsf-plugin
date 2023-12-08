@@ -19,7 +19,7 @@ fields:
         type: datepicker
 
     sf_cron_time:
-        label: Heure d'execution du CRON principal
+        label: Heure d'execution CRON SalesForce
         type: datepicker
         mode: time
         span: left

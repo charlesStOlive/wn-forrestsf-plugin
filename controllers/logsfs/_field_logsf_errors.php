@@ -1,1 +1,1 @@
-<?= $this->relationRender('logsf_errors') ?>
+<?= $this->relationRender('log_sf_errors') ?>
