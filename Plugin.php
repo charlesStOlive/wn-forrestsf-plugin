@@ -55,12 +55,12 @@ class Plugin extends PluginBase
     public function registerSchedule($schedule)
     {
         $sfCronTime = Settings::get('sf_cron_time');
-        //trace_log('$sfCronTime : '.$sfCronTime);
+        // trace_log('$sfCronTime : '.$sfCronTime);
 
         $schedule->call(function () {
-            //trace_log('lancement cron sf');
+            // trace_log('lancement cron sf');
             $sfCronTime = Settings::get('sf_cron_time');
-            //trace_log($sfCronTime);
+            // trace_log($sfCronTime);
             if (!$sfCronTime) {
                 \Log::error('sfCronTime est vide le cron SalesForce est annulé');
                 return;
